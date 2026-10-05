@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRON FORGE — Architectural Performance Training</title>
+  <meta name="description" content="A serious, high-quality training facility engineered for disciplined athletes. Editorial strength training in an architectural sanctuary.">
+  
+  <!-- Modern Typography: Syne (Editorial Display) & Plus Jakarta Sans (Grotesk Body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Sound / Presentation Mode Controls Bar -->
+  <header class="top-controls-bar">
+    <div class="controls-left">
+      <span class="facility-status-pill">
+        <span class="status-dot"></span>
+        Private Training Facility &bull; 06:00 &ndash; 23:00
+      </span>
+    </div>
+    <div class="controls-right">
+      <button class="control-btn" id="audioToggleBtn" title="Toggle Atmospheric Ambient Focus Sound">
+        <svg class="control-icon audio-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <svg class="control-icon audio-on hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+        <span id="audioLabel">Ambient Audio: Off</span>
+      </button>
+
+      <button class="control-btn" id="aspectRatioToggleBtn" title="Switch between 1440x900 Architectural Canvas and Fluid Fullscreen">
+        <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="4" width="18" height="14" rx="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="18" x2="12" y2="21"/>
+        </svg>
+        <span id="aspectLabel">1440&times;900 Canvas: Active</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Viewport Canvas (Centered 1440x900 presentation container with fluid adaptability) -->
+  <main class="canvas-wrapper" id="canvasWrapper">
+    <div class="hero-stage" id="heroStage">
+
+      <!-- Background Image Container with Cinematic Layers -->
+      <div class="hero-bg-layer" id="heroBg">
+        <img 
+          src="assets/gym_hero_bg.jpg" 
+          alt="Iron Forge architectural strength training facility with Olympic squat racks, barbells, and twilight city skyline view"
+          class="hero-bg-image"
+          id="heroBgImage"
+        />
+        <!-- Atmospheric Vignette & Color Grading Gradients -->
+        <div class="hero-overlay-shadow"></div>
+        <div class="hero-overlay-warmth"></div>
+        <div class="hero-film-grain"></div>
+      </div>
+
+      <!-- Architectural Interactive Hotspot Beacons -->
+      <div class="hotspot-beacon" style="top: 55%; left: 63%;" data-title="Olympic Power Station" data-desc="Commercial 11-gauge laser-cut steel with calibrated knurled bars and calibrated competition plates.">
+        <div class="beacon-pulse"></div>
+        <div class="beacon-core"></div>
+        <div class="beacon-tooltip">
+          <span class="tooltip-badge">Zone 01 &bull; Heavy Compound</span>
+          <h4>Olympic Power Station</h4>
+          <p>Calibrated 11-gauge steel, competition drop benches &amp; precision-milled knurled Olympic barbells.</p>
+        </div>
+      </div>
+
+      <div class="hotspot-beacon" style="top: 38%; left: 24%;" data-title="Architectural Skyline Glazing" data-desc="Acoustic double-glazed floor-to-ceiling glass providing natural circadian twilight illumination.">
+        <div class="beacon-pulse"></div>
+        <div class="beacon-core"></div>
+        <div class="beacon-tooltip">
+          <span class="tooltip-badge">Architecture &bull; Biophilic</span>
+          <h4>Panoramic Skyline Glazing</h4>
+          <p>Full natural circadian exposure optimizing dopamine &amp; focus during intensive evening lifts.</p>
+        </div>
+      </div>
+
+      <div class="hotspot-beacon" style="top: 72%; left: 91%;" data-title="Biomechanical Dumbbell Bay" data-desc="Milled solid-steel urethane dumbbells from 2.5kg to 65kg with calibrated weight distribution.">
+        <div class="beacon-pulse"></div>
+        <div class="beacon-core"></div>
+        <div class="beacon-tooltip">
+          <span class="tooltip-badge">Zone 03 &bull; Free Weights</span>
+          <h4>Solid-Steel Dumbbell Bay</h4>
+          <p>Precision-contoured stainless handles engineered to protect wrists during heavy hypertrophy work.</p>
+        </div>
+      </div>
+
+      <!-- ================= HEADER NAVIGATION ================= -->
+      <nav class="hero-nav" aria-label="Main Navigation">
+        <!-- Left: Wordmark / Logo -->
+        <a href="#home" class="nav-brand" aria-label="Iron Forge Home">
+          <div class="brand-monolith-icon">
+            <svg viewBox="0 0 28 28" fill="none" class="brand-svg">
+              <polygon points="14,2 25,8 25,20 14,26 3,20 3,8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 14h10M14 8v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="brand-title">IRON FORGE</span>
+        </a>
+
+        <!-- Center: Minimal Editorial Links -->
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#programs" class="nav-link active">Programs</a></li>
+          <li><a href="#trainers" class="nav-link">Trainers</a></li>
+          <li><a href="#membership" class="nav-link">Membership</a></li>
+          <li><a href="#results" class="nav-link">Results</a></li>
+        </ul>
+
+        <!-- Right: Pill Outlined Action -->
+        <div class="nav-actions">
+          <button class="nav-contact-btn" id="openContactBtn">
+            <span>Contact Us</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ================= HERO CONTENT GRID ================= -->
+      <div class="hero-grid-layout">
+
+        <!-- UPPER-LEFT: Large Editorial Headline & Compact CTA Button -->
+        <section class="hero-headline-block" aria-label="Hero Introduction">
+          <span class="editorial-eyebrow">SANCTUARY FOR SERIOUS TRAINING &bull; EST. 2026</span>
+          <h1 class="hero-editorial-title">
+            <span>BUILD</span>
+            <span>YOUR</span>
+            <span>STRONGEST</span>
+            <span>SELF</span>
+          </h1>
+
+          <div class="hero-cta-wrapper">
+            <button class="cta-pill-btn" id="startTrainingBtn" aria-haspopup="dialog">
+              <span>Start Training</span>
+              <div class="btn-hover-arrow">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </button>
+            <span class="cta-meta-note">Private intake &bull; Limited quarterly memberships</span>
+          </div>
+        </section>
+
+        <!-- UPPER-RIGHT: Floating Translucent Glass Information Panel -->
+        <aside class="floating-info-panel" id="floatingInfoPanel" aria-label="Featured Training Discipline">
+          <!-- 4 Pill Category Filters -->
+          <div class="panel-category-pills" role="tablist" aria-label="Program Disciplines">
+            <button class="cat-pill" role="tab" aria-selected="false" data-cat="strength">Strength Training</button>
+            <button class="cat-pill" role="tab" aria-selected="false" data-cat="personal">Personal Training</button>
+            <button class="cat-pill active" role="tab" aria-selected="true" data-cat="performance">Performance</button>
+            <button class="cat-pill" role="tab" aria-selected="false" data-cat="nutrition">Nutrition</button>
+          </div>
+
+          <!-- Panel Body: Copy on Left, Rounded Crop Inset on Right -->
+          <div class="panel-content-flex">
+            <div class="panel-text-col">
+              <span class="panel-kicker" id="panelKicker">DISCIPLINE FOCUS</span>
+              <h2 class="panel-title" id="panelTitle">PERFORMANCE TRAINING</h2>
+              <p class="panel-desc" id="panelDesc">
+                Train with purpose. Build strength, improve performance, and develop a body that performs as well as it looks.
+              </p>
+              <div class="panel-meta-stats">
+                <span class="meta-tag">Periodized Meso-cycles</span>
+                <span class="meta-tag">Biomechanical Assessment</span>
+              </div>
+            </div>
+
+            <!-- Inset Crop Card: Close-up of Knurled Barbell / Athlete Details -->
+            <div class="panel-image-crop-card" id="panelImageCrop">
+              <img 
+                src="assets/barbell_detail.jpg" 
+                alt="Macro detail of athlete gripping a knurled stainless steel Olympic barbell" 
+                class="crop-img"
+                id="panelCropImg"
+              />
+              <div class="crop-glass-badge">
+                <svg viewBox="0 0 16 16" fill="currentColor" class="badge-icon">
+                  <circle cx="8" cy="8" r="4"/>
+                </svg>
+                <span>Calibrated Barbell</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- LOWER-LEFT: Warm Taupe Floating Information Card -->
+        <div class="lower-left-taupe-card" id="lowerLeftCard">
+          <div class="taupe-card-inner">
+            <!-- Left Inset Image: Stack of Precision Calibrated Weights & Walnut Wood -->
+            <div class="taupe-inset-media">
+              <img 
+                src="assets/weights_stack.jpg" 
+                alt="Stacked calibrated Olympic steel weights and crafted natural walnut storage rack" 
+                class="taupe-crop-img"
+              />
+              <div class="taupe-tag">Calibrated Standard</div>
+            </div>
+
+            <!-- Right Inset Text Content -->
+            <div class="taupe-copy-col">
+              <h3 class="taupe-title">BUILT FOR STRENGTH</h3>
+              <p class="taupe-text">
+                Premium equipment, intelligent programming and an environment designed for serious training.
+              </p>
+              <a href="#facility-spec" class="taupe-link" id="exploreCardLink">
+                <span>Explore</span>
+                <span class="arrow-glyph">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOWER-MIDDLE: Center Statistic with Overlapping Avatars -->
+        <div class="center-stat-cluster" id="centerStatCluster">
+          <!-- Overlapping Circular Member & Trainer Portraits -->
+          <div class="avatar-stack-group" title="Meet our dedicated athlete community">
+            <div class="avatar-circle">
+              <img src="assets/avatar_1.jpg" alt="Iron Forge Member Athlete" class="avatar-img"/>
+            </div>
+            <div class="avatar-circle">
+              <img src="assets/avatar_2.jpg" alt="Iron Forge Strength Coach" class="avatar-img"/>
+            </div>
+            <div class="avatar-circle">
+              <img src="assets/avatar_3.jpg" alt="Iron Forge Performance Athlete" class="avatar-img"/>
+            </div>
+            <div class="avatar-circle avatar-more-badge">
+              <span>+</span>
+            </div>
+          </div>
+
+          <!-- Prominent Elegant Number & Label -->
+          <div class="stat-number-wrap">
+            <span class="stat-big-number" id="statCounter">500+</span>
+            <p class="stat-caption">Members building stronger lives</p>
+          </div>
+        </div>
+
+        <!-- LOWER-RIGHT: Editorial Text Block -->
+        <div class="lower-right-editorial-block" id="lowerRightBlock">
+          <h3 class="lr-title">TRAIN WITH PURPOSE</h3>
+          <p class="lr-text">
+            Whether you're building strength, improving performance or transforming your physique, every session has a purpose.
+          </p>
+          <a href="#programs-overview" class="lr-link" id="viewProgramsLink">
+            <span>View Programs</span>
+            <span class="lr-arrow">&nearr;</span>
+          </a>
+        </div>
+
+      </div> <!-- /hero-grid-layout -->
+
+      <!-- Bottom Atmospheric Bar -->
+      <footer class="hero-bottom-status-bar">
+        <div class="status-metric">
+          <span class="metric-label">Atmosphere</span>
+          <span class="metric-val">Acoustic Concrete &bull; Quiet Focus</span>
+        </div>
+        <div class="status-metric">
+          <span class="metric-label">Capacity</span>
+          <span class="metric-val">Capped at 25 Athletes Simultaneously</span>
+        </div>
+        <div class="status-metric">
+          <span class="metric-label">Access</span>
+          <span class="metric-val">Biometric &bull; 24/7 Concierge</span>
+        </div>
+      </footer>
+
+    </div> <!-- /hero-stage -->
+  </main>
+
+  <!-- ================= INTERACTIVE MODALS & DRAWERS ================= -->
+
+  <!-- Modal 1: Private Intake / Start Training -->
+  <dialog class="editorial-modal" id="startTrainingModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeTrainingModalBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="modal-eyebrow">MEMBERSHIP INTAKE &bull; QUARTER 4</span>
+      <h2 class="modal-title">INITIATE YOUR EVALUATION</h2>
+      <p class="modal-desc">
+        Iron Forge limits active memberships to preserve floor space, equipment availability, and uninterrupted focus. Schedule your private physical assessment.
+      </p>
+
+      <div class="modal-tiers-grid">
+        <div class="tier-card active">
+          <div class="tier-head">
+            <span class="tier-badge">Tier 01 &bull; Foundation</span>
+            <h4>Individual Athlete</h4>
+            <div class="tier-price">$380<span>/month</span></div>
+          </div>
+          <ul class="tier-features">
+            <li>Unrestricted biometric 24/7 access</li>
+            <li>Custom Eleiko rack &amp; locker reservation</li>
+            <li>Quarterly InBody 770 &amp; biomechanical audit</li>
+            <li>Cold plunge &amp; Finnish sauna access</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-head">
+            <span class="tier-badge">Tier 02 &bull; Comprehensive</span>
+            <h4>Coach Monitored</h4>
+            <div class="tier-price">$620<span>/month</span></div>
+          </div>
+          <ul class="tier-features">
+            <li>Includes all Individual Athlete privileges</li>
+            <li>2x Weekly private 1-on-1 coaching sessions</li>
+            <li>Custom periodized VBT strength programming</li>
+            <li>Bi-weekly nutritional blood panel tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="modal-form" id="intakeForm" onsubmit="event.preventDefault(); window.handleIntakeSubmit();">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Alexander Vance" required>
+          </div>
+          <div class="form-field">
+            <label for="emailAddr">Email Address</label>
+            <input type="email" id="emailAddr" placeholder="a.vance@discipline.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="primaryGoal">Primary Training Objective</label>
+            <select id="primaryGoal">
+              <option value="strength">Maximal Strength (Powerlifting / Compound)</option>
+              <option value="hypertrophy">Athletic Hypertrophy &amp; Recomposition</option>
+              <option value="performance">Sport Performance &amp; Movement Efficiency</option>
+              <option value="longevity">Executive Health &amp; Structural Resilience</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="modal-submit-btn">
+          <span>Submit Intake Request &rarr;</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Contact Us Drawer -->
+  <dialog class="editorial-modal" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeContactModalBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="modal-eyebrow">PRIVATE CONCIERGE &bull; IRON FORGE</span>
+      <h2 class="modal-title">CONNECT WITH THE FACILITY</h2>
+      <p class="modal-desc">
+        Located in the Arts &amp; Design District. Private parking and underground valet available for all registered athletes.
+      </p>
+
+      <div class="contact-specs-grid">
+        <div class="contact-box">
+          <span class="box-label">Facility Address</span>
+          <p class="box-val">482 Industrial Vault Way<br>Penthouse Level 6<br>New York, NY 10011</p>
+        </div>
+        <div class="contact-box">
+          <span class="box-label">Direct Concierge</span>
+          <p class="box-val">+1 (212) 840-7720<br>concierge@ironforge.fit</p>
+        </div>
+        <div class="contact-box">
+          <span class="box-label">Hours of Operation</span>
+          <p class="box-val">Monday &ndash; Friday: 05:30 &ndash; 23:00<br>Weekends: 07:00 &ndash; 21:00<br>Keycard Access: 24/7</p>
+        </div>
+      </div>
+
+      <div class="modal-actions-single">
+        <button class="modal-submit-btn" onclick="document.getElementById('contactModal').close();">
+          <span>Return to Facility Experience</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 3: Explore Facility Architecture -->
+  <dialog class="editorial-modal" id="facilityModal">
+    <div class="modal-card modal-wide">
+      <button class="modal-close-btn" id="closeFacilityModalBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="modal-eyebrow">ARCHITECTURAL SPECIFICATION</span>
+      <h2 class="modal-title">BUILT FOR UNCOMPROMISED STRENGTH</h2>
+      
+      <div class="facility-gallery-grid">
+        <div class="gallery-item">
+          <div class="item-img-wrap">
+            <img src="assets/weights_stack.jpg" alt="Calibrated Olympic Weight Plates">
+          </div>
+          <h4>Milled Calibrated Plates</h4>
+          <p>Machined cast iron plates with +/- 10g weight tolerance, finished in thin-film industrial matte coating.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="item-img-wrap">
+            <img src="assets/barbell_detail.jpg" alt="Knurled Olympic Barbell">
+          </div>
+          <h4>1.2mm Aggressive Knurl</h4>
+          <p>Swedish stainless steel bars with dual IPF/IWF knurl marks and needle-bearing rotation collars.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="item-img-wrap">
+            <img src="assets/gym_hero_bg.jpg" alt="Acoustic Board-Formed Concrete Architecture">
+          </div>
+          <h4>Acoustic Concrete &amp; Cedar</h4>
+          <p>Slotted western red cedar slats over acoustic mineral fleece eliminate harsh reverberation.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
